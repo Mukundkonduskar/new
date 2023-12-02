@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callback Example</title>
+</head>
+<body>
+  <h1>Callback Example</h1>
+  <div id="result"></div>
+
+  <script>
+    // Fetch data from the server and update the result on the web page
+    fetch('/result')
+      .then(response => response.json())
+      .then(data => {
+        if (data.error) {
+          document.getElementById('result').innerText = `Error: ${data.error}`;
+        } else {
+          document.getElementById('result').innerText = `Result: ${data.result}`;
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  </script>
+</body>
+</html>

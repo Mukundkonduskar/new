@@ -1,0 +1,13 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import HelloComponent from './HelloComponent'; // Assuming the component is in the same directory
+
+const App = () => {
+  return (
+    <div>
+      <HelloComponent />
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
